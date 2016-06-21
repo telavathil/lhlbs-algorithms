@@ -13,6 +13,7 @@ def sort(arr)
     end
 end
 
+#swap method for sort
 def swap!(a, b)
     self[a], self[b] = self[b], self[a]
     self
