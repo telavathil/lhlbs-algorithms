@@ -1,0 +1,5 @@
+Create a directory in your `/vagrant` folder (while ssh'd into your Vagrant VM). Within that directory, clone your fork of this repo, which contains one ruby file `max.rb`.
+
+Spend the time necessary to read and fully understand what the code in `max.rb` is doing. Google or discuss as necessary. Have an expectation of what will be output when you first run the code, then use the ruby command to run the `max.rb` file from the terminal. 
+
+Task: Currently, the built-in `Array#max` method is being used (line 3) to implement the logic for the `maximum` method. As an exercise, instead of leveraging this built-in method, implement your own logic such that the `maximum` method continues to work the same way that it was, and the resulting output from this ruby script stays the same. Note: you also cannot use Ruby's built-in `sort` method.
