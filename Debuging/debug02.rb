@@ -8,11 +8,16 @@ def average(numbers)
 end
 
 ## TEST HELPER METHOD
-def test_average(array)
+def test_average(array=nil)
   #handle nil arguments
-  return "Test case is nil, please provide values." array.nil?
+  return "Test case is nil, please provide values." if array.nil?
   #handle empty array
-  array.empty? ? return "Test case is []" : print "avg of #{array.inspect}:"
+
+  if array.empty?
+     return "Test case is []"
+  else
+     print "avg of #{array.inspect}:"
+  end
   result = average(array)
   p result
 end
