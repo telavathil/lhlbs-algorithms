@@ -62,6 +62,7 @@ taxes = {
 # Returns the tax amount rounded to 2 decimal places (eg: 44.53)
 
 def calculate_tax(st_code,dollars,taxes)
+  return "Please use a Valid State" unless taxes[st_code.to_sym].nil?
   (taxes[st_code.to_sym]*dollars).round(2)
 end
 
