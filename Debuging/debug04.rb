@@ -3,7 +3,7 @@ def char_count(list)
   list.each do |word|
     word.split('').each { |letter|
       if  letters[letter].nil?
-          letters[letter]=0
+          letters[letter]=1
       else
         letters[letter] += 1
       end
