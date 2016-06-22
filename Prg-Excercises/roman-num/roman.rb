@@ -50,26 +50,41 @@ def to_roman(input)
   #create a string to hold the number
   output = ""
 
-  #convert the number to a string and then back into and array of numbers
-  numbers = input.to_s.split('').map! {|a| a.to_i}
+  # #convert the number to a string and then back into and array of numbers
+  # numbers = input.to_s.split('').map(:to_i)
+  #
+  # #create separte actions for each size of number
+  # case numbers.length
+  # when 1 #1 to 9s
+  #   output.concat(roman_map[numbers[0].to_s.to_sym])
+  # when 2 #10 to 99s
+  #   output.concat(roman_map[(numbers[0]*10).to_s.to_sym])
+  #   output.concat(roman_map[numbers[1].to_s.to_sym])
+  # when 3 #100 to 999s
+  #   output.concat(roman_map[(numbers[0]*100).to_s.to_sym])
+  #   output.concat(roman_map[(numbers[1]*10).to_s.to_sym])
+  #   output.concat(roman_map[numbers[2].to_s.to_sym])
+  # when 4 #1000 to 3999s
+  #   output.concat(roman_map[(numbers[0]*1000).to_s.to_sym])
+  #   output.concat(roman_map[(numbers[1]*100).to_s.to_sym])
+  #   output.concat(roman_map[(numbers[2]*10).to_s.to_sym])
+  #   output.concat(roman_map[numbers[3].to_s.to_sym])
+  # end
 
-  #create separte actions for each size of number
-  case numbers.length
-  when 1 #1 to 9s
-    output.concat(roman_map[numbers[0].to_s.to_sym])
-  when 2 #10 to 99s
-    output.concat(roman_map[(numbers[0]*10).to_s.to_sym])
-    output.concat(roman_map[numbers[1].to_s.to_sym])
-  when 3 #100 to 999s
-    output.concat(roman_map[(numbers[0]*100).to_s.to_sym])
-    output.concat(roman_map[(numbers[1]*10).to_s.to_sym])
-    output.concat(roman_map[numbers[2].to_s.to_sym])
-  when 4 #1000 to 3999s
-    output.concat(roman_map[(numbers[0]*1000).to_s.to_sym])
-    output.concat(roman_map[(numbers[1]*100).to_s.to_sym])
-    output.concat(roman_map[(numbers[2]*10).to_s.to_sym])
-    output.concat(roman_map[numbers[3].to_s.to_sym])
+  #refactoring code post code reveiew
+  #iterator
+  i = 1000
+
+  #loop through input to create output
+  while i>=1
+    # get the value of the specific power
+    d = input/i
+    # assign input to the remanider
+    input = input % i
+    #build the string
+    output.concat(roman_map[(d*i).to_s.to_sym]) unless d.zero?
+    #decreament the iterator by a factor of 10
+    i = i/10
   end
-
-
+  output
 end
