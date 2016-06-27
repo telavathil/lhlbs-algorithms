@@ -2,7 +2,7 @@
 # It requires the other files/gems that it needs
 
 require 'pry'
-require './candidates'
+#require './candidates'
 require './filters'
 
 ## Your test code can go here
@@ -31,7 +31,7 @@ def search_candidates
             id = gets.chomp
             if find(id)
               puts("Here is the candidate with #{id}....")
-              puts @candidates.select {|candidate| candidate[:id] == id}
+              puts @candidates.select {|candidate| candidate[:id] == 1}
             else puts("Here is the candidate with #{id}....")
               puts("There is no candidate with #{id}....")
             end

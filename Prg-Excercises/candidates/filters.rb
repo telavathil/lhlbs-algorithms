@@ -2,6 +2,7 @@
 # This way, we keep these methods separated from other potential parts of the program
 
 def find(id)
+  raise '@candicates must be an Array' if @candidates.nil?
   if @candidates.each { |candidate| hash[:id] == id }
     true
   else
